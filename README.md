@@ -224,14 +224,120 @@ persistence, mas no mercado também encontramos outras implementação concorren
 no hibernate, poderemos executar nas outras implementações pois os mesmos seguem as especificações dos Jakarta 
 Persistence.
 
-## Java ME
+### Java ME
 Java Plataform Micro Edition tem como finalidade desenvolvimento para sistemas embarcados, que são celulares 
 impressores, pda, controle remota. Além disso a plaforma permite desenvolvimento de interfaces visuais e suporta 
 desenvolvimento de aplicações seguras e portaveis.
 
-## Java Card
+### Java Card
 Java Card permite que aplicações java sejam executadas em cartões inteligentes ou em outros dispositivos com a mesma 
 finalidade, bastante utilizado em chips de celulares e cartões de banco.
 
+## Máquina Virtual Java (JVM - Java Virtual Machine)
+Para entendermos como a JVM funciona temos de entender que Java é uma linguagem pre-compilada, sendo assim precisamos de 
+um software para traduzir o código para uma linguagem nativa de máquina para ser executado e ae que entra a nossa JVM.
+Assim o computador que for executar os códigos precisa da JVM instalada.
+Quando desenvolvemos na linguagem C, o programa escrito precisa ser compilado para que seja executado na máquina que 
+deseja, ou seja, o mesmo precisa ser convertido em binário para que seja compativel com o sistema operacional e 
+arquitetura do processador. Então o binário conhecerá todos os detalhes do sistema operacional e processador onde iráo 
+executar.
+![c-compilado.png](imgs%2Fc-compilado.png)
+Então se compilarmos para o windows, o mesmo executará em windows:
+![c-compilado-windows.png](imgs%2Fc-compilado-windows.png)
+Mas se precisar executar o mesmo código em vários sistemas operacionais, será necessário que o mesmo seja compilado para 
+todos os sistemas operacionais:
+![c-compilado-todos-operacionais.png](imgs%2Fc-compilado-todos-operacionais.png)
+Isso pode gerar alguns problemas, pois o mesmo código pode ter problemas em funcionar em todos os sistemas operacionais e 
+para que isso não ocorrá, precisará realizar ajustes para cada sistema operacional.
+Para evitar toda essa complicação nasceu a JVM (Java Virtual Machine). A JVM emula uma máquina física e permite que 
+possamos executar código pré-compilados, ou seja, não compilado como no C. Além disso ela é responsável pelo controle de 
+memória, troca de arquivos, segurança, entre outros. Desse modo não precisamos realizar ajustes no programa para que 
+funcione em vários sistemas operacionais, JVM se encarrega desse fator.
+Quando compilamos um programa Java, um arquivo chamado bytecode é gerado, o mesmo não é legivel para os programadores e 
+nem executável nos sistemas operacionais, apenas a JVM entender e traduzir-lo para instruções de sistemas para que seja 
+executado, independente do sistema operacional que esteja sendo executado.
+Dessa forma um único bytecode pode ser executado em vários sistemas operacionais, desde que jvm esteja instalada em todos 
+os sistemas operacionais que deseja executar as instruções, lembrando que existe uma Java para cada sistemas operacional 
+e arquitetura.
+![java-compilado-todos-sistemas.png](imgs%2Fjava-compilado-todos-sistemas.png)
+Não existe nenhuma relacão entre o Bytecode e a linguagem Java, um outro programa escrito em outra linguagem também pode 
+gerar um Bytecode e ser executado pela JVM. Java é apenas a linguagem padrão da JVM, por exemplo, podemos executar Bytecode 
+de javascript na JVM ou até o Kotlin.
+![java-compilado-todos-sistemas-kotlin.png](imgs%2Fjava-compilado-todos-sistemas-kotlin.png)
+Todo esse processo, não deixa o sistema mais lento, pois o Bytecode é interpretado pela JVM, torna mais lento apenas a 
+compilação do programa em relação a outras linguagens que já são compiladas diretamente para o sistema operacional que 
+deseja. Mas isso é compensado pelo JIT (compilação just-in-time), ou seja, a compilação da execução pode ser realizada 
+durante a execução do sistema, por exemplo, código executado repetidas vezes são inclusive otimizadas para execução mais 
+rápida. Mais informações sobre o JIT pode ser encontrado no link abaixo:
+https://pt.wikipedia.org/wiki/JIT
+Funcionamento do JIT:
+![jit.png](imgs%2Fjit.png)
 
+## JDK X JRE
+Como falamos anteriormente, para executar um programa java precisamos de uma JVM que traduz o Bytecode para 
+instruções/operações para a máquina entender o que precisa ser realizado. A JVM é apenas componente dentro do ambiente de
+execução completo chamado de JRE (Java Runtime Environment). Resumindo a JRE é um ambiente de execução dos programas java, 
+é o software que precisamos instalar nas máquinas ao qual desejamos executar os programas desenvolvidos.
+![jre.png](imgs%2Fjre.png)
+Como podemos observar acima a JRE possui:
+- As bibliotecas do java: String, List, Integer, entre outras;
+- Class Loader: Componente responsável por carregar programas java;
+- JVM (ao qual falamos anteriormente).
+Lembrando que temos as distribuições da mesma para praticamente todos os sistemas operacionais e arquiteturas de 
+processadores.
+O JDK (Java Development Kit), kit de desenvolvimento para desenvolver os programas java.
+![jdk.png](imgs%2Fjdk.png)
+Como na figura acima o mesmo possui:
+- JRE;
+- Compilador para transformar o código fonte em bytecode;
+- Entre outras ferramentas para desenvolvimento.
+Então para desenvolvermos programas Java vamos precisar de instalar a JDK em nossa máquina. Na JDK também temos 
+distriuições para todos os sistemas operacionais. 
 
+## Conhecendo versões do Java
+Em 1995 tivemos nosso primeiro JDK beta e depois em 1996 tivemos nosso JDK 1.0, mas o relevante é a partir do Java 6. O 
+Java 6 foi lançado em dezembro de 2006 e o mesmo recebeu atualizações gratuitas pela Oracle até abril de 2013, porém para 
+os que pagam o suporte extendido da linguagem recebeu atualizações até dezembro de 2018, que exatamente quando se encerrou 
+esse tipo de suporte. 
+Após isso o Java 7 foi lançado em julho de 2011 e se formos observar tivemos um gap de praticamente 5 anos no lançamento 
+de uma nova versão da linguagem, mas a partir do Java 7 não temos mais atualizações gratuitas, mas quem paga pelo suporte 
+extendido tem até atualizações até julho 2022.
+O Java 8 que é considerada uma versão muito importante, pois lhe auxiliou a ganhar mercado novamente, foi lançado 3 anos 
+depois da versão 7, em março de 2014. Por causa dessas demoras para lançamentos de novas versões com atualizações da linguagem, falta de cronograma e entre 
+outras coisas fez o Java ter uma queda de uso, mas a partir do Java 9 em setembro de 2017 a Oracle mudou o lançamento 
+de uma nova versão de 6 em 6 meses.
+Um  versão do Java pode ser RF (Feature Release), uma versão de funcionalidades, não é uma versão LTS que é uma versão 
+para longo prazo e estável. A RF é uma demonstração para novas funcionalidades mas sem assumir que essas novas 
+funcionalidades ficaram na linguagem, isso é feito para a comunidade utilizar as funcionalidades validando-as e ajudar a 
+melhorar a linguagem e também serve para para demonstrar as funcionalidades que ficaram na linguagem. Então, com essa nova 
+lógica de releases sempre teremos novas funcionalidades na linguagem deixando a mesma sempre muito atualizada, sendo que 
+quando uma nova release é lançada, a antiga release não terá mais suporte. Sempre que nova release é lançada 
+é importante atualizar o ambiente de produção, para que manter a segurança de sua aplicação.
+O Java 10 foi lançado em março de 2018 e também foi uma FR,ou seja, também teve sua atualizações de suporte
+por apenas 6 meses. O Java 11 foi lançado em setembro de 2018, mas o mesmo foi uma versão LTS (Long Term Suport), que 
+significa que o mesmo teria suporte até 2027 para certas distruibuições e a partir dessa versão LTS, as novas versões LTS 
+serão lançadas de 3 em 3 anos. E entre esses lançamentos da LTS teremos os lançamentos da RF.
+- Normalmente temos dois lançamentos do Java por ano, que ocorrem em março e setembro.
+- Java 12 foi lançado em março de 2019 como FR, lembrando que o mesmo não substitui o Java 11, pois 11 ainda continua 
+recebendo atualizações por ser uma versão LTS. 
+- Java 13 foi lançado em setembro de 2019 como FR.
+- Java 14 foi lançado em março de 2020 como FR.
+- Java 15 foi lançado em setembro de 2020 como FR.
+- Java 16 foi lançado em março de 2021 como FR.
+- Java 17 foi lançado em setembro de 2021 foi lançado a versão LTS com os todas as FR acumuladas até então, sendo que seu 
+suporte vai no minimo até 2029.
+- Java 18 será lançado em março de 2022.
+![versionamento-java.png](imgs%2Fversionamento-java.png)
+Mas em 2021, a Oracle propros a alteração do lançamento das versões LTS para a cada 2 anos, em vez de 3 em 3 anos. Então 
+a próxima versão LTS seria o Java 21 com precisão de lançamento em setembro de 2023.
+
+Mas qual versão utilizar em meus projetos?
+- Atualmente no mercado o Java 8 e Java 11 são utilizados em projetos considerados legados, mas sem problemas caso queira 
+utilizar essas versões desde que ele esteja recebendo atualizações, principalmente de segurança.
+- Mas caso esteja startando um projeto novo, comece a partir da versão LTS mais recente que esteja disponível, pois assim 
+trará maior segurança para os seus projetos.
+- Evite utilizar FR em produção pois terá que atualizar seus projetos de 6 em 6 meses, principalmente em projetos delicados.
+
+Nos nossos exemplos que vão ser construídos ao longo do  nosso e-book iremos utilizar o Java 17.
+
+## Licença de uso e distribuições JDK
