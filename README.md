@@ -341,3 +341,38 @@ trará maior segurança para os seus projetos.
 Nos nossos exemplos que vão ser construídos ao longo do  nosso e-book iremos utilizar o Java 17.
 
 ## Licença de uso e distribuições JDK
+Como falamos anteriormente, mas começarmos a desenvolver em Java, precisamos instalar a JDK em nosso computador de acordo 
+com nosso sistema operacional, mas para isso temos várias fontes de download e essas várias fontes são chamadas de 
+distribuições. O que precisamos fazer é somente decidir qual distruibuição queremos, onde temos opções gratuitas e pagas.
+Por um lado pode ser bom ter todas essas distribuições, por outro lado nem tanto por causa da confusão que costuma gerar 
+para quem está no inicio da carreira.
+Mas antes de falarmos um pouco mais da JDK que precisa instalar, vamos entender um processo antes, que é o JCP (Java 
+Community Process). O JCP é um processo formal que permite que pessoas ou empresas colaborem na evolução de uma tecnologia 
+Java,ou seja, do ecosistema Java. Dentro do JCP temos JSR (Java Specification Request), que é uma espeficação que define 
+regras, padrões que as implementações precisam seguir para que todas as versões sejam compatíveis.
+Resumindo o JCP é o conjunto JSR's que define como deve ser implementado uma tecnologia, ou seja, ela não implementa, é 
+apenas uma especificação. Em outro momento uma empresa ou pessoa que deseja construir uma distribuição usa o JCP como guia 
+para realizar a implementação do seu projeto.
+Um exemplo mais concreto, quando pesquisamos no site do JCP (https://jcp.org/) pelo jcp 384, encontramos falando tudo 
+sobre o que foi lançado no Java 11. E se pesquisarmos por mais outras JCP's também vamos achar para os outros lançamentos.
+![java-384.png](imgs%2Fjava-384.png)
+E a implementação de referência utilizada pela comunidade é o Open JDK (https://openjdk.org/) e os fornecedores de JDK 
+realizam um build da openjdk para criarem suas distribuições, normalmente esses builds passam por uma bateria de testes 
+para validarem se está tudo ok, como testes de segurança ou até mesmo implementar testes de melhorias para seus usuários.
+Todos os builds precisam ser certificados para justamente validar sua compatilidade com o Java SE 
+(TCK - Technology Compatibility Kit - https://en.wikipedia.org/wiki/Technology_Compatibility_Kit).
+![jsr.png](imgs%2Fjsr.png)
+Algumas das distrições que existem:
+- Oracle OpenJDK (https://jdk.java.net/) - produz builds somente das últimas por versão, após 6 meses do lançamento 
+não realizam mais builds, evitar em produção pois sempre precisará atualizar para a versão mais nova;
+- Oracle JDK (https://www.oracle.com/java/technologies/java-se-glance.html) produto da Oracle, inclusive tem contrato de 
+suporte. No link a seguir ainda temos a referência de até quando a Oracle dará suporte para cada versão
+https://www.oracle.com/java/technologies/java-se-support-roadmap.html .
+- Eclipse Temurin (https://adoptium.net/);
+- Amazon Corretto (https://aws.amazon.com/pt/corretto/), foco em perfomance e segurança por causa da nuvem aws.
+- RedHat OpenJDK (https://developers.redhat.com/products/openjdk/download);
+- IBM Semeru (https://developer.ibm.com/languages/java/semeru-runtimes/);
+- Azul Zulu (https://www.azul.com/downloads/);
+- BellSoft (https://bell-sw.com/);
+- SapMachine (https://sap.github.io/SapMachine/);
+- Entre outras menos conhecidas.
