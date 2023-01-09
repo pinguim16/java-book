@@ -376,3 +376,7 @@ https://www.oracle.com/java/technologies/java-se-support-roadmap.html .
 - BellSoft (https://bell-sw.com/);
 - SapMachine (https://sap.github.io/SapMachine/);
 - Entre outras menos conhecidas.
+
+## Instalando JDK Linux e macOs
+Para realizarmos o tutorial de como instalar nessas máquinas utilizamos máquina virtual, tanto para linux Ubuntu, 
+quanto para mac e no próximo capitulo vamos falar como realizar os procedimentos no windows.
