@@ -581,5 +581,39 @@ E caso deseje tornar o java 11 ou 17 padrão para todas as suas aplicações se 
 estará em uso.
 ![sdk-java-default.png](imgs%2Fsdk-java-default.png)
 
+## Instalando JDK no Windows
+Como em qualquer instalação de aplicações Windows, vamos clicar no botão "Next" até a janela de "Custom Setup" onde vamos 
+ativar a opção para "Set JAVA_HOME variable" para "Will be installed on local hard drive" e seguimos com o next até 
+finalizarmos a instalação.
+![windows-java-home.png](imgs%2Fwindows-java-home.png)
 
+Para validarmos se a instalação está correta, usamos os comandos ***java -version*** e ***javac -version***.
+![windows-java-versao.png](imgs%2Fwindows-java-versao.png)
 
+E caso deseje entender onde o JAVA_HOME está configurado, basta utilizar a opção de pesquisa do windows e digitar 
+"Variáveis de ambiente", teremos a tela abaixo com todas as variáveis configuradas.
+![windows-variaveis-ambiente.png](imgs%2Fwindows-variaveis-ambiente.png)
+
+## Melhor editor para código simples
+Atualmente temos vários editores para trabalhamos com java no mercado:
+- Eclipse (https://www.eclipse.org/downloads/) - creio que seja a ferramenta mais antiga do mercado para se programar em java;
+- Intellij (https://www.jetbrains.com/pt-br/idea/download/) - a mais completa no meu ponto de vista;
+- Visual Studio Code (https://code.visualstudio.com/) - com a instalação dos pluggins corretos consegue se trabalhar com qualquer linguagem;
+
+Nesse primeiro momento lhe aconselho a usa a ferramenta mais simples que tu possui em sua máquina, o editor de texto, pois assim 
+irá aprender a sintaxe e palavras chaves mais facilmente. As IDE's possuem autocomplete lhe ajudando na programação, mas se for 
+o primeiro contato com Java podem atrapalhar em vez de ajudar.
+Posteriormente usaremos a IDE quando formos avançando.
+Então vamos citar alguns exemplos que podem ser usados em cada plataforma:
+- MacOs temos o TextEdit, mas para deixarmos o mesmo como é necessário, precisaremos clicar em format e escolher a opção 
+"Converter para Texto Simples" ou o atalho ***Shift+Command+T***, basta aceitar a opção de remoção de formatação. 
+![mac-converter-texto-simples.png](imgs%2Fmac-converter-texto-simples.png)
+Para deixar o editor ainda melhor, desativar a opção para correção ortográfica, para que o mesmo não fique sugerindo 
+correção para o que for digitado.
+![mac-ortografia.png](imgs%2Fmac-ortografia.png)
+
+- No lixux temos o TextEditor e vamos apenas configurar o mesmo para Plain Text no rodapé.
+![ubuntu-plain-text.png](imgs%2Fubuntu-plain-text.png)
+
+- No Windows podemos usar o notepad, mas se desejar usar outros, como notepad++ (https://notepad-plus-plus.org/downloads/) 
+ou até mesmo sublime (https://www.sublimetext.com/), basta desativar o autocomplete dos mesmos.
