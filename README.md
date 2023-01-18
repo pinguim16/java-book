@@ -377,6 +377,209 @@ https://www.oracle.com/java/technologies/java-se-support-roadmap.html .
 - SapMachine (https://sap.github.io/SapMachine/);
 - Entre outras menos conhecidas.
 
-## Instalando JDK Linux e macOs
+## Instalando JDK Linux e MacOs
 Para realizarmos o tutorial de como instalar nessas máquinas utilizamos máquina virtual, tanto para linux Ubuntu, 
 quanto para mac e no próximo capitulo vamos falar como realizar os procedimentos no windows.
+
+### Download do Virtualbox
+- Para realizar download do Virtualbox basta acessar o site (https://www.virtualbox.org/wiki/Downloads), clicar na versão que 
+deseja para o seu sistema operacional, no tutorial abaixo estamos usando a versão para windows.
+- Para o caso queira instalar MacOs no seu virtualbox realize download do ***VirtualBox Oracle VM VirtualBox*** 
+***Extension Pack***.
+![virtual-box-download.png](imgs%2Fvirtual-box-download.png)
+- Para instalar ***Extension Pack***, basta clicar em Ferramentas, clicar em instalar e selecionar o arquivo baixado. 
+- Após isso a instalação será automática.
+![instala-extension-pack.png](imgs%2Finstala-extension-pack.png)
+
+### Instalando Linux no Virtual Box 
+A imagem que utilizamos se encontra na pasta iso.
+Vamos passar um tutorial básico de como instalar o linux ubuntu em um virtual box:
+- A versão do Ubuntu que iremos utilizar nesse tutorial é Ubuntu 22.04.1 LTS e para realizar download do mesmo, bastar 
+acessar o link (https://ubuntu.com/desktop) e clicar no botão ***Download Ubuntu***, irá iniciar o download de uma iso.
+![ubuntu-site.png](imgs%2Fubuntu-site.png)
+- Para instalarmos a máquina ubuntu, vamos clicar em ***Novo***;
+![novo-ubuntu.png](imgs%2Fnovo-ubuntu.png)
+- Preenchemos o nome da máquina virtual e a localização da imagem.
+![ubuntu-parametros.png](imgs%2Fubuntu-parametros.png)
+- Preenchemos os dados de usuário que desejamos utilizar e a senha caso queira adicionar.
+![ubuntu-hardware.png](imgs%2Fubuntu-hardware.png)
+- As configurações de hardware que deseja, normalmente gosto de usar 2 core com 4GB de memória para que não 
+fique muito lento a máquina.
+![ubuntu-disco.png](imgs%2Fubuntu-disco.png)
+- Configuração do HD(hard disk), normalmente para testes deixo o padrão de 25GB, caso queira alterar no futuro depois da 
+instalação é possível.
+![ubuntu-sumario.png](imgs%2Fubuntu-sumario.png)
+- Antes de iniciar a instalação o virtual box nos apresenta todas as configurações, se tudo estiver conforme deseja basta 
+clicar em finalizar para iniciar a máquina e a instalação.
+![ubuntu-black-insta.png](imgs%2Fubuntu-black-insta.png)
+- A primeira tela a ser apresentada é o GNU com suas opções que podemos utilizar com a ISO do ubuntu, como só desejamos 
+instalar, basta não clicarmos em nada que a instalação irá começar.
+![ubuntu-install.png](imgs%2Fubuntu-install.png)
+- Se tudo estiver correto basta aguardar a instalação.
+![ubuntu-initial.png](imgs%2Fubuntu-initial.png)
+- Após a instalação já temos nossa máquina 100% funcional para uso.
+
+### Instalando MacOS BigSur no Virtual Box
+A imagem que utilizamos se encontra na pasta iso.
+- Ao clicar no botão "Novo" para criação de uma nova máquina virtual, iremos preencher os dados conforme exemplo abaixo: 
+![virtual-macos-novo.png](imgs%2Fvirtual-macos-novo.png)
+Praticamente precisamos preencher:
+  - nome;
+  - Imagem ISO (localização onde sua máquina está);
+
+- Na proxima tela temos configuração de memória e processador, normalmente usamos 8Gb de memória e 4CPU.
+![virtual-box-mac-memo-proce.png](imgs%2Fvirtual-box-mac-memo-proce.png)
+
+- O disco precisa ser de no minimo 80GB.
+![virtual-box-mac-hd.png](imgs%2Fvirtual-box-mac-hd.png)
+
+- A próxima tela nos apresenta o resumo de tudo que configuramos até o momento.
+![virtualbox-resume-mac.png](imgs%2Fvirtualbox-resume-mac.png)
+
+- Nós não iniciaremos a máquina, em vez disso vamos executar esses comandos antes:
+cd "C:\Program Files\Oracle\VirtualBox\"
+VBoxManage.exe modifyvm "nome da sua máquina" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+VBoxManage setextradata "nome da sua máquina" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
+VBoxManage setextradata "nome da sua máquina" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+VBoxManage setextradata "nome da sua máquina" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+VBoxManage setextradata "nome da sua máquina" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+VBoxManage setextradata "nome da sua máquina" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+
+- Agora podemos iniciar a máquina, a mesma irá reiniciar algumas vezes até apresentar a tela para instalação.
+Selecionamos a língua que a nossa imagem será instalada:
+![mac-lingua.png](imgs%2Fmac-lingua.png)
+
+- Na próxima tela selecionaremos o "Utilitário de Disco".
+![utilitario-disco-mac.png](imgs%2Futilitario-disco-mac.png)
+
+- Ao abrir a tela de utilitário notamos que mesmo nos mostra alguns detalhes, vamos nos concentrar apenas no disco que 
+criamos:
+![hd-macos.png](imgs%2Fhd-macos.png)
+- Vamos apagar esse disco e colocar o nome de macos para o disco:
+![hd-macos-dps.png](imgs%2Fhd-macos-dps.png)
+- Após o procedimento realizado podemos voltar na tela anterior e clicar em "Instalação do macOS Big Sur".
+![utilitario-disco-mac.png](imgs%2Futilitario-disco-mac.png)
+
+- No próximo passo teremos a tela de boas vindas, basta clicar no botão de "Continuar":
+![macos-boasvindas.png](imgs%2Fmacos-boasvindas.png)
+
+- Aceitamos o contrato de licença.
+![aceitar-contrato-macos.png](imgs%2Faceitar-contrato-macos.png)
+
+- Selecione o disco e clique em "continuar":
+![selecao-disco-macos.png](imgs%2Fselecao-disco-macos.png)
+
+- A instalação irá começar normalmente demora cerca de 15 min, nesse tempo a máquina virtual irá reiniciar algumas vezes:
+![instalacao-macos.png](imgs%2Finstalacao-macos.png)
+
+- Após instalação selecione o país que deseja.
+![mac-seleção-pais.png](imgs%2Fmac-sele%E7%E3o-pais.png)
+
+- Continuar em "Idiomas Escritos e Falados".
+![mac-idiomas-escritos-falados.png](imgs%2Fmac-idiomas-escritos-falados.png)
+
+- Acessibilidade se quiser configurar alguma coisa, caso contrário "Agora não".
+![mac-acessibilidade.png](imgs%2Fmac-acessibilidade.png)
+
+- Dados e Privadade clique eu continuar, caso queira alguma informação basta clica na opção "Mais informações".
+![mac-dados-e-privacidade.png](imgs%2Fmac-dados-e-privacidade.png)
+
+- Assistente de migração, clicamos no botão "Agora Não", pois é instalação de uma máquina virtual.
+![mac-assistente-migracao.png](imgs%2Fmac-assistente-migracao.png)
+
+- Inicie a sessão com Seu ID Apple, caso deseje criar siga os passos, caso não que é o que vamos fazer clique em 
+"Configurar Mais Tarde" e para o pop-up clique em "Ignorar".
+![mac-sessao-id-apple.png](imgs%2Fmac-sessao-id-apple.png)
+
+- Termos e Condições clicamos em "Aceitar" e no pop-up "Aceitar".
+![mac-termos-condicoes.png](imgs%2Fmac-termos-condicoes.png)
+
+- Preencha os dados para criar seu usuário e senha e após isso continuar.
+![mac-crie-conta.png](imgs%2Fmac-crie-conta.png)
+
+- Na Configuração Expressa, caso deseje configurar alguma coisa clique em "Personalizar os Ajustes", caso contrário clique 
+em "Continuar".
+![mac-configuracao-expressa.png](imgs%2Fmac-configuracao-expressa.png)
+
+- Análise clique em "Continuar".
+![mac-analise.png](imgs%2Fmac-analise.png)
+
+- Tempo de Uso clique em "Continuar".
+![mac-tempo-de-uso.png](imgs%2Fmac-tempo-de-uso.png)
+
+- Na tela da Siri, desativamos "Ativar Pedir à Siri" e clicamos na opção "Continuar".
+![mac-siri.png](imgs%2Fmac-siri.png)
+
+- Escolha a aparência que mais lhe agrade.
+![mac-aparencia.png](imgs%2Fmac-aparencia.png)
+
+- Será aplicada todas as configurações que escolheu.
+![mac-config-final.png](imgs%2Fmac-config-final.png)
+
+- Existe mais uma tela de configuração de teclado que é a última e após isso seu mac está pronto para uso. E para instalar 
+o SDKMan basta seguir os passsos abaixo, sem precisar instalar o curl.
+
+Para que seu mac tela meu desempenho após desligar a máquina virtual, clique com o botão direito na mesma e selecione 
+configurações, na opção de "Monitor", aumente a memória de video para 128MB.
+![mac-memoria-video.png](imgs%2Fmac-memoria-video.png)
+
+### Instalando SDKMan - Linux e MacOs
+
+#### Instalando curl no Linux
+O procedimento abaixo pode ser realizado em Mac e Linux.
+A partir de agora vamos demonstrar como realizar a instalação do JDK no Ubuntu e para isso vamos usar o SDKMan.
+O SDKman (https://sdkman.io/) é uma ferramenta para que possamos gerenciar as instalações dos Sdks que desejamos em sistemas 
+baseados em Unix, com simples comandos conseguimos realizar a instalação de SDKS/JDKS. Para visualizar as instalações de 
+SDKs basta acessar o link https://sdkman.io/sdks e para verificar as jdks disponiveis o link é https://sdkman.io/jdks.
+Para instalarmos o sdkman no ubuntu, precisaremos do curl que normalmente não vem instalado no ubuntu, para instalarmos 
+o mesmo, basta rodar o comando:
+- ***su root*** - para executar o comando como administrador.
+- ***apt upgrade*** -  atualizar os pacotes;
+- ***apt update*** - atualizar os pacotes disponíveis;
+- ***apt install curl*** - para atualizar os pacotes;
+![curl-install.png](imgs%2Fcurl-install.png)
+- ***curl --version*** - para validarmos se a instalação foi executada com sucesso (como na imagem acima);
+
+#### Instalando SDKMan
+Agora para instalarmos o SDKMan basta seguir os comandos:
+- ***curl -s "https://get.sdkman.io" | bash***;
+- ***source "$HOME/.sdkman/bin/sdkman-init.sh"***;
+![sdk-version.png](imgs%2Fsdk-version.png)
+- ***sdk version*** - para validarmos a instalação.
+Para validarmos que não existe nenhum JDK existente, vamos digitar ***java***, que é um comando para 
+executarmos aplicações Java:
+![java-not-found.png](imgs%2Fjava-not-found.png)
+E temos ***java not found*** ou seja ***java não encontrado***.
+Então para verificarmos as versões que temos disponíveis para instalação usamos o comando ***sdk list java***.
+![sdk-list-java.png](imgs%2Fsdk-list-java.png)
+Na listagem apresentada, vamos utilizar a versão Temurin para realizar todos os exemplos.
+E para instalar a versão que precisamos vamos utilizar o comando ***sdk install java 17.0.2-tem***, lembrando que para 
+instalação utilizamos o identificador (identifier) da lista anterior.
+![sdk-install-java.png](imgs%2Fsdk-install-java.png)
+E ao conferirmos se o java está instalado corretamente usamos o comando ***java -version***.
+![java-version.png](imgs%2Fjava-version.png)
+Se usarmos o comando novamente ***sdk list java***, iremos notar que o mesmo no informa qual versão que se encontra 
+instalada através da coluna status, onde temos a informação "local only" e na coluna "use" temos uma indicação através do 
+">>>" que estamos usando essa versão atualmente, como no exemplo abaixo:
+![sdk-java-installed.png](imgs%2Fsdk-java-installed.png)
+Mas, se precisarmos instalar outra versão, por exemplo a versão 11 do Temurin, usaremos o comando 
+***sdk install java 11.0.14-tem***, ao final da instalação o mesmo nos pergunta se já desejamos usar essa versão como 
+default para o nosso projeto.
+![sdk-java-install-other-version.png](imgs%2Fsdk-java-install-other-version.png)
+Se respondermos como "N" e formos verificar qual versão estamos utilizamos, deveremos encontrar a versão 17.
+![java-version.png](imgs%2Fjava-version.png)
+Mas para usarmos a versão que foi instalada, utilizaremos o seguinte comando ***sdk use java 11.0.14-tem***, sendo que 
+estamos utilizando seu identificador para alterarmos a versão. Note que altermos a versão, já verificamos qual a versão 
+está em uso e temos a resposta como a versão 11.
+![sdk-alter-version.png](imgs%2Fsdk-alter-version.png)
+E caso deseje ir mais a fundo, podemos validar através do JAVA_HOME qual versão estamos utilizando através do comando 
+***echo $JAVA_HOME***. O JAVA_HOME é uma variável de ambiente, onde configuramos o caminho raiz onde o java está instalado e 
+essa variável normalmente é utilizada por IDES ou ferramentas que necessitam acessar o java para alguma utilização.
+![sdk-java-home.png](imgs%2Fsdk-java-home.png)
+E caso deseje tornar o java 11 ou 17 padrão para todas as suas aplicações se utiliza o comando 
+***sdk default java 11.0.14-tem*** e se precisar reiniciar o terminal ou até mesmo a máquina essa será a versão que 
+estará em uso.
+![sdk-java-default.png](imgs%2Fsdk-java-default.png)
+
+
+
