@@ -617,3 +617,110 @@ correção para o que for digitado.
 
 - No Windows podemos usar o notepad, mas se desejar usar outros, como notepad++ (https://notepad-plus-plus.org/downloads/) 
 ou até mesmo sublime (https://www.sublimetext.com/), basta desativar o autocomplete dos mesmos.
+
+# Fundamentos Java
+
+## Criando primeiro programa
+
+Por mais simples que seja esse primeiro código que iremos desenvolver, preste atenção no passo a passo, pois o mesmo é 
+importante para que possa entender como funciona a compilação do código, sua execução, estruturação do código e principal, 
+a resolução de erros comuns que se encontra no dia a dia, caso esqueça de algum detalhe.
+Detalhes que deve se observar:
+- A linguagem java possui palavras reservadas que iremos falar mais adiante. Exemplo: while, for, if, public, entre outras.
+- É case sensitive, ou seja, a palavra for não é igual a For, então a mesma diferencia letras maiusculas de minusculas.
+Então vamos escrever nosso primeiro programa, abra seu editor de preferência, ao já apresentamos alguns nos tópicos passados.
+```
+public class olaMundo {
+  
+}
+```
+- o que declaramos até o momento é uma classe, que veremos nos próximos tópicos de orientação a objetos, por ora chamaremos 
+de programa. As palavras utilizadas também explicaremos nos tópicos de orientação a objetos.
+- Como informamos anteriormente, a linguagem possui palavras reservadas e nessa pequena declaração já estamos lidando com 
+duas : ***public*** e ***class***. As mesmas precisam ser escritas em letra minuscula para que não tenhamos problemas na 
+compilação e execução.
+- o ***olaMundo*** já é o nome que estamos dando ao nosso programa e por padrão/ boas pátricas no java, usamos 
+***CamelCase***, onde é "denominação em inglês para a prática de escrever as palavras compostas ou frases, onde cada 
+palavra é iniciada com maiúsculas e unidas sem espaços"(Fonte: https://pt.wikipedia.org/wiki/CamelCase).
+- E ainda temos as chaves ***{}***, tudo que é que escrito entre as mesmas são consideradas bloco de código, ou seja, 
+tudo escrito entre as chaves pertencem a classe ***olaMundo***.
+
+Continuando:
+```
+public class olaMundo {
+  public static void main(String[] args){
+  
+  } 
+}
+```
+- No nosso próximo passo declaramos, uma linha de código, que dessa vez chamados de metodo. Então para entendermos, toda 
+classe é composta por um ou mais metodos, para facilitar a compreensão.
+- Esse método é função principal do Java, ou seja, é através dele que iniciamos a execução de nossos programas. Como na 
+classe podemos notar que repetimos algumas palavras reservadas da classe, mas apareceram outras que também são reservadas.
+- No nosso main iremos incluir o código que nosso programa irá executar, lembrando que o metodo precisa se main, pois é 
+uma palavra reservada e é o ponto inicial de um programa.
+- Ponto importante a se notar, ao escrever nosso metodo main, nota-se que começamos ele com um espaçamento, isso se chama 
+indentação e nos ajuda a compreender que nosso main pertence a classe olaMundo. Na maioria das linguagens de programação, 
+a indentação é empregada com o objetivo de ressaltar a estrutura do algoritmo, aumentando assim a legibilidade do código.
+Como estamos utilizando um editor de texto normalmente precisamos realizar a indentação manualmente, mas com IDE isso já 
+acontece automaticamente.
+- Lembrando indentação é uma boa prática de programação, não só em java, mas em várias linguagens.
+```
+public class olaMundo {
+  public static void main(String[] args){
+    System.out.println("Meu primeiro programa");
+  } 
+}
+```
+- Agora estamos escrevendo uma instrução para nosso sistema executar, a linha 
+***System.out.println("Meu primeiro programa");*** irá imprimir a saída que adicionamos entre aspas duplas.
+System é uma classe Java que a chamamos, dentro da mesma temos uma subclasse ***out***, que possui o metodo 
+***println*** que irá imprimir o texto. Inicialmente é um pouco confuso mas iremos explicar mais adiante em orientação a 
+objetos.
+- Tudo que colocamos dentro de aspas duplas no Java é transformado em um texto, o mesmo não será interpretado como uma 
+instrução.
+- Importante, toda instrução Java termina no final com ***ponto e vírgula (;)***.
+Agora vamos salvar o nosso arquivo com o nome que desejar, mas sem espaços entre o nome e com o a extensão .java.
+![exemplo-ola-mundo.png](imgs%2Fexemplo-ola-mundo.png)
+
+## Compilando e executando nosso Olá Mundo
+
+Para iniciarmos vamos começar abrindo nosso terminal e vamos acessar a pasta onde salvamos nosso arquivo [olaMundo.java](exemplos%2FolaMundo.java), nosso caso 
+seria a pasta exemplos.
+![localizacao-ola-mundo.png](imgs%2Flocalizacao-ola-mundo.png)
+Vamos utilizar o comando ***javac***, ele é um programa do Java responsável por compilar um arquivo com código-fonte Java.
+Ao executarmos o mesmo e caso não tenhamos nenhum erro, não teremos nenhum retorno no terminal.
+![compila-ola-mundo.png](imgs%2Fcompila-ola-mundo.png)
+Mas, se observarmos nossa pasta de exemplos, um novo arquivo foi criado [olaMundo.class](exemplos%2FolaMundo.class).
+![ola-mundo-class.png](imgs%2Fola-mundo-class.png)
+Esse arquivo gerado é nosso arquivo bytecode java que mencionamos anteriormente que a JVM utilizará para executar o seu 
+arquivo e quando formos distribuir o mesmo, só precisaremos enviar esse arquivo para outras máquinas.
+Para que possa entender os erros compilação, vamos realizar uma simulação, criando outro arquivo [olaMundo-erro.java](exemplos%2FolaMundo-erro.java)
+e vamos realizar a sua compilação para que possa entender. Vamos somente remover o ponto e vírgula (;) do final da instrução, 
+ficando da seguinte forma:
+```
+public class olaMundo {
+    public static void main(String[] args){
+        System.out.println("Meu primeiro programa")
+    }
+}
+```
+Ao tentarmos compilar o mesmo, temos o seguinte erro abaixo:
+![ola-mundo-erro.png](imgs%2Fola-mundo-erro.png)
+Nota-se que o mesmo nos informa que o ponto e vírgula (;) está ausente e até mesmo onde o mesmo precisa ser adicionado.
+Esse é um caso simples de erro, mas o java sempre tenta ser nos dar uma noção bem próxima do que pode estar ocorrendo. 
+Detalhe importante, se notarmos a classe ***.class***, não foi gerada pois a mesma se encontrava com erro.
+
+Quando formos executar, temos que prestar atenção nos seguintes passos:
+- Para compilar um programa usamos java e nome do programa que será executado, mas o programa a ser executado 
+não pode ser OlaMundo.class, pois teremos o seguinte erro:
+![ola-mundo-erro-exec.png](imgs%2Fola-mundo-erro-exec.png)
+- O nome tem que igual ao da classe que construimos, no caso ***olaMundo***;
+- Quando seguimos as instruções anteriores e executamos o programa através do comando ***java olaMundo***, temos o resultado 
+esperado:
+![ola-mundo-exec.png](imgs%2Fola-mundo-exec.png)
+
+A partir do Java 11 podemos executar um arquivo Java, sem a necessidade de sua compilação antes, para facilitar nos testes.
+Basta usarmos o comando ***java [olaMundo.java](exemplos%2FolaMundo.java)***.
+![exec-ola-mundo-java.png](imgs%2Fexec-ola-mundo-java.png)
+
