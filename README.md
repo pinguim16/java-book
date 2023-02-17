@@ -630,7 +630,7 @@ Detalhes que deve se observar:
 - É case sensitive, ou seja, a palavra for não é igual a For, então a mesma diferencia letras maiusculas de minusculas.
 Então vamos escrever nosso primeiro programa, abra seu editor de preferência, ao já apresentamos alguns nos tópicos passados.
 ```
-public class olaMundo {
+public class OlaMundo {
   
 }
 ```
@@ -639,15 +639,15 @@ de programa. As palavras utilizadas também explicaremos nos tópicos de orienta
 - Como informamos anteriormente, a linguagem possui palavras reservadas e nessa pequena declaração já estamos lidando com 
 duas : ***public*** e ***class***. As mesmas precisam ser escritas em letra minuscula para que não tenhamos problemas na 
 compilação e execução.
-- o ***olaMundo*** já é o nome que estamos dando ao nosso programa e por padrão/ boas pátricas no java, usamos 
+- o ***OlaMundo*** já é o nome que estamos dando ao nosso programa e por padrão/ boas pátricas no java, usamos 
 ***CamelCase***, onde é "denominação em inglês para a prática de escrever as palavras compostas ou frases, onde cada 
 palavra é iniciada com maiúsculas e unidas sem espaços"(Fonte: https://pt.wikipedia.org/wiki/CamelCase).
 - E ainda temos as chaves ***{}***, tudo que é que escrito entre as mesmas são consideradas bloco de código, ou seja, 
-tudo escrito entre as chaves pertencem a classe ***olaMundo***.
+tudo escrito entre as chaves pertencem a classe ***OlaMundo***.
 
 Continuando:
 ```
-public class olaMundo {
+public class OlaMundo {
   public static void main(String[] args){
   
   } 
@@ -660,13 +660,13 @@ classe podemos notar que repetimos algumas palavras reservadas da classe, mas ap
 - No nosso main iremos incluir o código que nosso programa irá executar, lembrando que o metodo precisa se main, pois é 
 uma palavra reservada e é o ponto inicial de um programa.
 - Ponto importante a se notar, ao escrever nosso metodo main, nota-se que começamos ele com um espaçamento, isso se chama 
-indentação e nos ajuda a compreender que nosso main pertence a classe olaMundo. Na maioria das linguagens de programação, 
+indentação e nos ajuda a compreender que nosso main pertence a classe OlaMundo. Na maioria das linguagens de programação, 
 a indentação é empregada com o objetivo de ressaltar a estrutura do algoritmo, aumentando assim a legibilidade do código.
 Como estamos utilizando um editor de texto normalmente precisamos realizar a indentação manualmente, mas com IDE isso já 
 acontece automaticamente.
 - Lembrando indentação é uma boa prática de programação, não só em java, mas em várias linguagens.
 ```
-public class olaMundo {
+public class OlaMundo {
   public static void main(String[] args){
     System.out.println("Meu primeiro programa");
   } 
@@ -685,21 +685,21 @@ Agora vamos salvar o nosso arquivo com o nome que desejar, mas sem espaços entr
 
 ## Compilando e executando nosso Olá Mundo
 
-Para iniciarmos vamos começar abrindo nosso terminal e vamos acessar a pasta onde salvamos nosso arquivo [olaMundo.java](exemplos%2FolaMundo.java), nosso caso 
+Para iniciarmos vamos começar abrindo nosso terminal e vamos acessar a pasta onde salvamos nosso arquivo [OlaMundo.java](exemplos%2FolaMundo.java), nosso caso 
 seria a pasta exemplos.
 ![localizacao-ola-mundo.png](imgs%2Flocalizacao-ola-mundo.png)
 Vamos utilizar o comando ***javac***, ele é um programa do Java responsável por compilar um arquivo com código-fonte Java.
 Ao executarmos o mesmo e caso não tenhamos nenhum erro, não teremos nenhum retorno no terminal.
 ![compila-ola-mundo.png](imgs%2Fcompila-ola-mundo.png)
-Mas, se observarmos nossa pasta de exemplos, um novo arquivo foi criado [olaMundo.class](exemplos%2FolaMundo.class).
+Mas, se observarmos nossa pasta de exemplos, um novo arquivo foi criado [OlaMundo.class](exemplos%2FolaMundo.class).
 ![ola-mundo-class.png](imgs%2Fola-mundo-class.png)
 Esse arquivo gerado é nosso arquivo bytecode java que mencionamos anteriormente que a JVM utilizará para executar o seu 
 arquivo e quando formos distribuir o mesmo, só precisaremos enviar esse arquivo para outras máquinas.
-Para que possa entender os erros compilação, vamos realizar uma simulação, criando outro arquivo [olaMundo-erro.java](exemplos%2FolaMundo-erro.java)
+Para que possa entender os erros compilação, vamos realizar uma simulação, criando outro arquivo [OlaMundo-erro.java](exemplos%2FolaMundo-erro.java)
 e vamos realizar a sua compilação para que possa entender. Vamos somente remover o ponto e vírgula (;) do final da instrução, 
 ficando da seguinte forma:
 ```
-public class olaMundo {
+public class OlaMundo {
     public static void main(String[] args){
         System.out.println("Meu primeiro programa")
     }
@@ -715,12 +715,35 @@ Quando formos executar, temos que prestar atenção nos seguintes passos:
 - Para compilar um programa usamos java e nome do programa que será executado, mas o programa a ser executado 
 não pode ser OlaMundo.class, pois teremos o seguinte erro:
 ![ola-mundo-erro-exec.png](imgs%2Fola-mundo-erro-exec.png)
-- O nome tem que igual ao da classe que construimos, no caso ***olaMundo***;
-- Quando seguimos as instruções anteriores e executamos o programa através do comando ***java olaMundo***, temos o resultado 
+- O nome tem que igual ao da classe que construimos, no caso ***OlaMundo***;
+- Quando seguimos as instruções anteriores e executamos o programa através do comando ***java OlaMundo***, temos o resultado 
 esperado:
 ![ola-mundo-exec.png](imgs%2Fola-mundo-exec.png)
 
 A partir do Java 11 podemos executar um arquivo Java, sem a necessidade de sua compilação antes, para facilitar nos testes.
-Basta usarmos o comando ***java [olaMundo.java](exemplos%2FolaMundo.java)***.
+Basta usarmos o comando ***java [OlaMundo.java](exemplos%2FolaMundo.java)***.
 ![exec-ola-mundo-java.png](imgs%2Fexec-ola-mundo-java.png)
 
+### Possiveis erros que poderam ser encontrados
+- No [OlaMundo01.java](exemplos%2FOlaMundo01.java) criamos o mesmo programa e simulamos o erro de String com s minusculo 
+e tivemos o seguinte erro.
+![ola-mundo01-erro.png](imgs%2Fola-mundo01-erro.png)
+- No [OlaMundo02.java](exemplos%2FOlaMundo02.java), o programa executa normalmente, mas temos uma sutil alteração, o nome 
+de nossa classe não está no padrão CamelCase que mencionamos anteriormente.
+![ola-mundo02.png](imgs%2Fola-mundo02.png)
+- No [OlaMundo03.txt](exemplos%2FOlaMundo03.txt), o programa não executa, pois não salvamos o arquivo no formato correto.
+![ola-mundo03.png](imgs%2Fola-mundo03.png)
+- No [OlaMundo04.java](exemplos%2FOlaMundo04.java), ao tentarmos executar nosso programa temos o erro de não fechamento da 
+string que gostaria que fosse impressa em nosso console.
+![ola-mundo04.png](imgs%2Fola-mundo04.png)
+- No [OlaMundo05.java](exemplos%2FOlaMundo05.java), temos o erro de esquecimento de ponto e vírgula (;) para fechamento da 
+instrução.
+![ola-mundo05.png](imgs%2Fola-mundo05.png)
+- No [OlaMundo06.java](exemplos%2FOlaMundo06.java), temos o erro de fechar o escopo de um metodo, esquecemos de utilizar 
+chave após nossa instrução.
+![ola-mundo06.png](imgs%2Fola-mundo06.png)
+- No [OlaMundo07.java](exemplos%2FOlaMundo07.java), escrevemos main com M maisculo e o Java não reconhece, pois o correto 
+é main.
+![ola-mundo07.png](imgs%2Fola-mundo07.png)
+- No [OlaMundo08.java](exemplos%2FOlaMundo08.java), não adicionamos o Array na string.
+![ola-mundo08.png](imgs%2Fola-mundo08.png)
