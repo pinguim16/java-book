@@ -745,5 +745,69 @@ chave após nossa instrução.
 - No [OlaMundo07.java](exemplos%2FOlaMundo07.java), escrevemos main com M maisculo e o Java não reconhece, pois o correto 
 é main.
 ![ola-mundo07.png](imgs%2Fola-mundo07.png)
-- No [OlaMundo08.java](exemplos%2FOlaMundo08.java), não adicionamos o Array na string.
-![ola-mundo08.png](imgs%2Fola-mundo08.png)
+  - No [OlaMundo08.java](exemplos%2FOlaMundo08.java), não adicionamos o Array na string.
+  ![ola-mundo08.png](imgs%2Fola-mundo08.png)
+
+## Comentários no Código
+Comentários são textos que inserimos no código para explicar blocos de códigos ou trechos especificos, visando 
+auxiliar outro desenvolvedor que irá dar manunteção no seu código posteriormente. Além disso, o comentário é ignorado 
+pelo compilador, sendo assim o comportamento de seu programa permanece o mesmo.
+Temos duas opções de comentários dentro do java, comentar apenas uma linha ou comentar um bloco de código.
+- Para comentários de uma linha usamos ***//*** e tudo que foi escrito depois dele é considerado comentário pelo java:
+```
+// Exemplo de comentário por linha e será ignorado pelo compilador
+public class OlaMundo {
+    public static void main(String[] args){ 
+        // dentro do metodo também é possível utilizar o comentário
+        System.out.println("Meu primeiro programa"); // na frente de instrução também é possível adicionar um comentário
+    }
+}
+```
+Ao executarmos o programa [OlaMundoComentarios.java](exemplos%2FOlaMundoComentarios.java), podemos notar que foi 
+executado sem problemas.
+![ola-mundo-comentario-linha.png](imgs%2Fola-mundo-comentario-linha.png)
+Um segundo exemplo que podemos utilizar é comentar uma instrução que não gostariamos mais de executar, exemplo:
+```
+public class OlaMundo {
+    public static void main(String[] args){ 
+        //System.out.println("Meu primeiro programa"); 
+    }
+}
+```
+Dessa forma o compilador irá ignorar suas instrução, mas temos de tomar cuidado pois, normalmente comentamos alguma 
+instrução apenas para algum teste, caso a instrução não seja mais necessária, o ideal é remove-la para deixar seu código 
+mais limpo.
+
+- Para comentários de bloco iniciamos com ___/*___ e depois fechamos o bloco com ___*/___, exemplo:
+```
+public class OlaMundoComentarios {
+    /*
+        Tudo escrito dentro desse bloco é comentário.
+        Mais utilizado para documentar alguma parte do código.
+     */
+    public static void main(String[] args){
+        System.out.println("Meu primeiro programa"); // na frente de instrução também é possível adicionar um comentário
+    }
+}
+```
+Podemos utilizar o mesmo para comentar um bloco de código inteiro que não será mais executado.
+```
+public class OlaMundoComentarios {
+    /*
+     public static void main(String[] args){
+        System.out.println("Meu primeiro programa"); 
+    }
+     */
+}
+```
+Ao executarmos nosso primeiro exemplo [OlaMundoComentariosBloco.java](exemplos%2FOlaMundoComentariosBloco.java), notamos 
+que executa normalmente:
+![ola-mundo-comentario-bloco.png](imgs%2Fola-mundo-comentario-bloco.png)
+Mas nosso segundo exemplo [OlaMundoComentariosBlocoErro.java](exemplos%2FOlaMundoComentariosBlocoErro.java) não irá funcionar, pois comentamos o metodo main e como vimos em capitulos anteriores, o mesmo 
+é obrigatório para executarmos um programa java:
+![ola-mundo-comentarios-bloco-erro.png](imgs%2Fola-mundo-comentarios-bloco-erro.png)
+
+Detalhe que precisamos ter com comentários, normalmente utilizamos o mesmo para explicar alguma regra de negócio que 
+estamos implementando naquele método ou explicando alguma lógica mais complexa para o mesmo, comentários demais 
+normalmente não é bem visto, pois as vezes estaremos mais poluindo o código do que auxiliando outro deve. Então use 
+comentários somente para auxiliar o próximo, não comente o óbvio.
