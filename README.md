@@ -648,7 +648,7 @@ tudo escrito entre as chaves pertencem a classe ***OlaMundo***.
 Continuando:
 ```
 public class OlaMundo {
-  public static void main(String[] args){
+  public static void main(String[] args) {
   
   } 
 }
@@ -667,7 +667,7 @@ acontece automaticamente.
 - Lembrando indentação é uma boa prática de programação, não só em java, mas em várias linguagens.
 ```
 public class OlaMundo {
-  public static void main(String[] args){
+  public static void main(String[] args) {
     System.out.println("Meu primeiro programa");
   } 
 }
@@ -700,7 +700,7 @@ e vamos realizar a sua compilação para que possa entender. Vamos somente remov
 ficando da seguinte forma:
 ```
 public class OlaMundo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Meu primeiro programa")
     }
 }
@@ -757,7 +757,7 @@ Temos duas opções de comentários dentro do java, comentar apenas uma linha ou
 ```
 // Exemplo de comentário por linha e será ignorado pelo compilador
 public class OlaMundo {
-    public static void main(String[] args){ 
+    public static void main(String[] args) { 
         // dentro do metodo também é possível utilizar o comentário
         System.out.println("Meu primeiro programa"); // na frente de instrução também é possível adicionar um comentário
     }
@@ -769,7 +769,7 @@ executado sem problemas.
 Um segundo exemplo que podemos utilizar é comentar uma instrução que não gostariamos mais de executar, exemplo:
 ```
 public class OlaMundo {
-    public static void main(String[] args){ 
+    public static void main(String[] args) { 
         //System.out.println("Meu primeiro programa"); 
     }
 }
@@ -785,7 +785,7 @@ public class OlaMundoComentarios {
         Tudo escrito dentro desse bloco é comentário.
         Mais utilizado para documentar alguma parte do código.
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Meu primeiro programa"); // na frente de instrução também é possível adicionar um comentário
     }
 }
@@ -794,7 +794,7 @@ Podemos utilizar o mesmo para comentar um bloco de código inteiro que não ser�
 ```
 public class OlaMundoComentarios {
     /*
-     public static void main(String[] args){
+     public static void main(String[] args) {
         System.out.println("Meu primeiro programa"); 
     }
      */
@@ -811,3 +811,75 @@ Detalhe que precisamos ter com comentários, normalmente utilizamos o mesmo para
 estamos implementando naquele método ou explicando alguma lógica mais complexa para o mesmo, comentários demais 
 normalmente não é bem visto, pois as vezes estaremos mais poluindo o código do que auxiliando outro deve. Então use 
 comentários somente para auxiliar o próximo, não comente o óbvio.
+
+# Conhecendo as convenções de código
+Quando estamos trabalhando em um código onde todos seguem o minimo das convenções e as boas práticas
+é muito menos cansativo, pois o mesmo não é desgastante para interpretar. Diante disso vamos sempre voltar sobre esse tema, 
+pois o mesmo é importante para sua carreira. Existe o termo chamado convenções de código ou code conventions que são 
+recomendações, boas práticas ou alguns conhecem como guia ou code styles. 
+As recomendações são literalmente uma documentação nos guiando em como devemos escrever código, se todos seguem esse 
+padrão se perde até menos tempo com situações no sentido de "ajustar o código de um colega" para auxiliar toda a equipe.
+Alguns detalhes que podemos encontrar na documentação:
+- Identação do código;
+- Comentários;
+- Declarações;
+- Instruções;
+- Espaços em branco;
+- Entre outros.
+Importante lembrar que todos os membros de uma equipe devem trabalhar com a mesma convenção de código, pois não adianta 
+cada um trabalhar com uma, pois no final todos ficaram frustados. E o interessante é que todo o mercado utiliza a 
+convenção com algumas anuancias. 
+E os beneficios que podemos pontual:
+- Demonstra profissionalismo;
+- Reduz custo de manutenção;
+- Melhora legibilidades;
+- Mais produtividade;
+- Entre outros.
+Para exemplicar casos, vamos dar alguns exemplos simples:
+```
+public class OlaMundo {
+     public static void main(String[] args) {
+        System.out.println("Meu primeiro programa"); 
+    }
+}
+```
+- Note que na linha que declaramos nossa classe, após o nome da mesma deixamos um espaço em branco e inserimos a chave 
+para iniciar o bloco de instruções, o mesmo ocorre na assinatura de nosso metodo main. 
+```
+public class OlaMundo 
+{
+     public static void main(String[] args) 
+     {
+        System.out.println("Meu primeiro programa"); 
+     }
+}
+```
+- Chaves iniciando em uma nova linha, quando se começou a programar em java se seguia esse padrão, mas atualmente de 
+acordo com a convenção não se utiliza mais esse padrão, o padrão atualmente é no final de cada linha para abertura de 
+bloco.
+
+```
+public class OlaMundo {
+     public static void main(String[] args) {
+        System.out.println("Meu primeiro programa"); 
+    }
+}
+```
+- Identação, demonstrando aonde começa e termina cada bloco de instrução, depende do projeto pode variar de 2 a 4 
+espaços.
+
+```
+public class OlaMundo {
+     public static void main(String[] args) {
+        System.out.println("Meu primeiro programa"); 
+    }
+}
+```
+- Nome do programa em CamelCase "OlaMundo", quando avançarmos mais no curso se notará que para variaveis e metodos também 
+temos padrão para seguir.
+
+Vamos deixar o exemplo de duas documentação, inclusive a da Oracle não sofre alterações deste 1999:
+- https://www.oracle.com/java/technologies/javase/codeconventions-contents.html ;
+- https://google.github.io/styleguide/javaguide.html .
+Não precisa se preocupar em ler a documentação por agora, pois iremos pontuar muito sobre o tema nos próximos capitulos, 
+mas guarde os links como guia de consulta caso em algum momento de sua carreira queira esclarecer alguma dúvida.
