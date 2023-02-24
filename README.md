@@ -883,3 +883,103 @@ Vamos deixar o exemplo de duas documentação, inclusive a da Oracle não sofre 
 - https://google.github.io/styleguide/javaguide.html .
 Não precisa se preocupar em ler a documentação por agora, pois iremos pontuar muito sobre o tema nos próximos capitulos, 
 mas guarde os links como guia de consulta caso em algum momento de sua carreira queira esclarecer alguma dúvida.
+
+## Palavras reservadas
+As palavras reservadas que mencionamos anteriormente, são palavras especiais que tem significado/função para o compilador 
+Java. Tabela abaixo citamos alguns exemplos de palavras:
+
+| <!-- -->   | <!-- -->  | <!-- -->   | <!-- -->  | <!-- -->    | <!-- --> | <!-- --> |
+|------------|-----------|------------|-----------|-------------|----------|----------|
+| abstract   | boolean   | break      | byte      | case        | catch    | char     |
+| class      | continue     | default   |   do |     double      |  else  |  extends    |
+|  final   |   finally   |  float   |   for   |   if       |   implements   |   import     |
+| instanceof |  int   |interface  |  long      | native   |      |    |
+| new        | package   | private    | protected | public      | return   | short    |
+| static     | strictfp  | super      | switch    | synchonized | this     | throw    |
+| throws     | transient | try        | void      | volatile    | while    | asset    |
+| enum       |           |            |           |             |          |          |
+
+As palavras não podem ser usadas como nome de classes, metodos ou até mesmo de váriavel, inclusive quando estamos usando 
+uma IDE, a mesma já informa que temos um erro no código para não deixar acontecer esse problema. Elas fazem parte da 
+semantica da linguagem, ou seja, tem significado especial para quem está programando lhe ajudando a construir instruções.
+Por exemplo, se usamos a palavra ***if*** estamos verificando se uma condição é verdadeira para executar uma próxima 
+instrução. Ou se utilizarmos ***double*** queremos definir um valor que possa possuir ponto flutuante.
+Agora se pegamos o nosso exemplo anterior, o nosso primeiro programa:
+```
+public class OlaMundo {
+     public static void main(String[] args) {
+        System.out.println("Meu primeiro programa"); 
+    }
+}
+```
+- Temos como palavras chave : public, class, static, void.
+- main não é palavra chave, mas sim o nome do programa, qualquer outro nome o programa iria compilar mas não iria executar.
+Por convenção do java, o metodo main é por onde nosso programa irá iniciar para executar as instruções.
+-  String e System não são palavras-chave, mas sim classes e iremos passar pelas mesma adiante. O out e println são métodos
+de dentro do System.
+E quando tentamos compilar um programa com a palavra chave designada como nome, no caso do exemplo abaixo:
+```
+public class final {
+     public static void main(String[] args) {
+        System.out.println("Meu primeiro programa"); 
+    }
+}
+```
+O compilador não consegue reconhecer o nosso programa e nos aponta vários erros:
+![ola-mundo-final.png](imgs%2Fola-mundo-final.png)
+
+A medida que formos avançando vamos passar por quase todas a palavras e vamos explicando a utilização de cada uma.
+
+## Variaveis : o que são? o que comem ? Onde vivem?
+Durante a construção de nosso programas/ sistemas normalmente precisamos armazenar informações para utiliza-las mais tarde, 
+normalmente armazenamos na memória do computador. E como em outras linguagens, variaveis são nomes simbolicos a dados que 
+armazenamos na memória do computador. Elas são definidas, atribuidas, acessadas e calculadas através dos nossos programas,
+código fonte java e seus valores podem mudar a medida que o nosso programa executa.
+Vamos utilizar o template abaixo para declararmos nossas variaveis, deixei um comentário para ajudar na declaração:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        // Local onde iremos declarar nossas variaveis
+    }
+}
+```
+Antes de declarar uma variavel precisamos definir que tipo de informação vamos armazenar nessa variável, vamos mais a 
+frente falar dos tipos primitivos que são utilizados no Java e também falaremos em orientação a objetos os tipos que 
+você pode criar.
+Para facilitar, vamos começar com um tipo que podemos encontrar em todas as linguagens, que é o tipo ***inteiro***, nele
+podemos armazenar números inteiros positivos e negativos. Para entender melhor, os números inteiros são os números 
+positivos e negativos, que não apresentam parte decimal e, o zero. Estes números formam o conjunto dos números inteiros, 
+indicado por ℤ.
+Não pertencem aos números inteiros: as frações, números decimais, os números irracionais e os complexos.
+O conjunto dos números inteiros é infinito e pode ser representado da seguinte maneira:
+ℤ = {..., - 3, - 2, - 1, 0, 1, 2, 3,...}
+No java declaramos o tipo inteiro como ***int*** e vamos declarar uma váriavel do tipo inteiro com o ano atual:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual = 2023;
+    }
+}
+```
+A nossa variavel ***anoAtual*** está armazenando o número 2023, o sinal de igual na linguagem java e outras linguagens, 
+é para atribuição de valor a uma variavel. Para realizarmos uma comparação de equivalência usamos ***==*** (dois iguais).
+Como mencionado anteriormente, sempre encerramos nossas instruções com ponto e virgula.
+Entao, resumindo, declaramos nossa variavel do tipo inteiro e lhe atribuimos o valor 2023.
+Observação importante sobre a linguagem java, a mesma é uma linguagem fortemente tipada, ou seja, uma vez declarado uma 
+variável não podemos mais alterar seu tipo, ela permanece com um tipo fixo.
+Nosso exemplo anterior já declaramos a variavel iniciando a mesma com um valor, mas podemos apenas declarar a mesma e 
+depois atribuir valor a mesma como no exemplo abaixo:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual;
+        anoAtual = 2023;
+    }
+}
+```
+A diferença de um exemplo outro é que apenas enomizamos linhas de código. 
+Se observar na linha atribuimos o valor a variavel, declaramos a váriavel, utilizamos espaço em branco, utilizamos o 
+operador de atribuição (=), espaço em branco,declaramos o valor que gostariamos de atribuir a nossa váriavel e encerramos 
+com ponto e virgula(;). Os espaços em branco faz parte da convenção para deixar o código mais legivel para outros 
+programadores. Se executarmos qualquer um dois dos programas os mesmo compilam e executam, mas não teremos nenhum resultado 
+impresso, pois não estamos usando a instrução dos exemplos anteriores para imprimir.
