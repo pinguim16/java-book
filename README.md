@@ -983,3 +983,147 @@ operador de atribuição (=), espaço em branco,declaramos o valor que gostariam
 com ponto e virgula(;). Os espaços em branco faz parte da convenção para deixar o código mais legivel para outros 
 programadores. Se executarmos qualquer um dois dos programas os mesmo compilam e executam, mas não teremos nenhum resultado 
 impresso, pois não estamos usando a instrução dos exemplos anteriores para imprimir.
+Continuando para vermos o conteúdo de nossa variável, vamos realizar a sua impressão como fizemos no nosso primeiro 
+programa, só dessa vez não iremos usar uma string/texto como fizemos nos exemplos anteriores, vamos passar nossa variável como 
+parametro, ou seja, no lugar da string/texto iremos adicionar o nome da variável:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual;
+        anoAtual = 2023;
+        System.out.println(anoAtual); 
+    }
+}
+```
+Quando executamos nosso programa temos a seguinte saída:
+![variaveis-result.png](imgs%2Fvariaveis-result.png)
+
+Mas caso queira testar a atribuição da variável na mesma linha, basta realizar a alteração no código e executar que 
+irá obter o mesmo resultado acima.
+Uma váriavel pode ser alterada após ser declarada e atribuida, por exemplo:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual = 2023;
+        anoAtual = 2024;
+        System.out.println(anoAtual); 
+    }
+}
+```
+Iniciamos a nossa variável com o valor de 2023, mas logo em seguida alteramos o seu valor lhe atribuindo 
+o novo valor de 2024.
+![variaveis-2024.png](imgs%2Fvariaveis-2024.png)
+
+Podemos utilizar as váriaveis para varios outros objetivos, para realizar calculos :
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual = 2023;
+        int proximoAno = 2024;
+        
+        int diferencaAnos = proximoAno - anoAtual;
+        
+        System.out.println(diferencaAnos); 
+    }
+}
+```
+Criamos mais uma variavel para definir um novo valor e mais uma variável para que o resultado do 
+calculo de subtração seja atribuido a ela e temos o seguinte resultado:
+![variaveis-calculo-resultado.png](imgs%2Fvariaveis-calculo-resultado.png)
+
+Podemos realizar o calculo de outra maneira, somar o nosso atual com um valor literal, sem precisar de variavel:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual = 2023;
+        
+        int somaAnos = anoAtual + 5;
+        
+        System.out.println(somaAnos); 
+    }
+}
+```
+E dessa forma também teremos a resposta esperada:
+![variavel-literal.png](imgs%2Fvariavel-literal.png)
+
+Temos opção para imprimir mais que o resultado de nossos calculos usando um recurso que toda linguagem de programa possui,
+sendo a concatenação de valores, ou seja, posso juntar dois valores para imprimir:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual = 2023;
+        
+        int somaAnos = anoAtual + 5;
+        
+        System.out.println("Total da soma: " + somaAnos); 
+    }
+}
+```
+Nesse exemplo, usamos a forma a literal do texto, ou seja, o mesmo vai ser fixo concatenando com a váriavel de soma. E 
+quando executamos nosso programa, temos o seguinte resultado:
+![variavel-literal-impressao.png](imgs%2Fvariavel-literal-impressao.png)
+Observe que nosso exemplo utilizamos o operador ***mais (+)*** para concatenar as duas informações
+(texto literal com o resultado de nossa soma) e não para realizar um calculos matemático.
+Mas se tu se perguntou se podemos declarar tudo em uma linha para facilitar o trabalho, sim podemos e o resultado final 
+não será alterado:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        int anoAtual = 2023, proximoAno = 2024;
+        
+        int diferencaAnos = proximoAno - anoAtual;
+        
+        System.out.println("Resultado : " + diferencaAnos);
+    }
+}
+```
+Mas só podemos realizar por se tratar de duas variáveis ***int***.
+Nosso programa continua executando normalmente :
+![variaveis-resultado-linha.png](imgs%2Fvariaveis-resultado-linha.png)
+
+Como já mencionamos anteriormente, vamos pontuar alguns detalhes de boas práticas para trabalhar com variáveis e para o 
+caso queira se aprofundar mais no assunto, segue abaixo nossa fonte:
+https://www.oracle.com/java/technologies/javase/codeconventions-declarations.html
+- A primeira delas que vamos pontuar, sempre declarar uma variavel por linha para deixar mais legivel para quem for ler 
+seu programa, como no exemplo:
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        //int anoAtual = 2023, proximoAno = 2024; - Padrão não recomendado de acordo com link acima
+        int anoAtual = 2023;
+        int proximoAno = 2024
+        
+        int diferencaAnos = proximoAno - anoAtual;
+        
+        System.out.println("Resultado : " + diferencaAnos);
+    }
+}
+```
+- Para nomear variaveis utilizamos o lowerCamelCase, onde começamos o nome das variáveis com a letra a minuscula, como no 
+caso do ***anoAtual***, use somente os padrões para Java, tente não trazer padrões de outras linguagens. 
+Diferente de CamelCase que utilizamos nos nomes de nossas classes.
+```
+public class Variaveis {
+     public static void main(String[] args) {
+        //Padrão não recomendado de acordo com link acima
+        //int anoAtual = 2023, proximoAno = 2024;
+        
+        //Padrões incorretos: anoatual, ANO_ATUAL, entre outros...
+        //lowerCamelCase, padrão correto.
+        int anoAtual = 2023;
+        int proximoAno = 2024
+        
+        int diferencaAnos = proximoAno - anoAtual;
+        
+        System.out.println("Resultado : " + diferencaAnos);
+    }
+}
+```
+- Evite abreviações nos nomes das variáveis, lembre-se que outras pessoas estaram lendo seu programa e não existe um
+consenso que sua abreviação é a mesma do outro programador que estará lendo seu programa. Um exemplo simples é para o nome 
+***total***, podemos abreviar como ***tt***, ***ttl***, ***tot*** e várias outras formas. Não fique com preguiça de digitar 
+o nome correto, a má interpretação de seu código pode levar a erros na correção de algum bug.
+- As variaveis em java não pode ser iniciadas com digito, por exemplo: ***1anoAtual***. O progrma irá apresentar um erro 
+e não vai compilar. Mas podemos declarar das seguintes maneiras, apesar de não ser recomendado: ***ano1Atual***, 
+***ano_Atual***, ***ano$Atual***. 
+- E como mencionamos anteriormente, não podemos utilizar as palavras reservadas.
