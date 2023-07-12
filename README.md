@@ -1289,3 +1289,207 @@ public class MediaExemplos {
 ```
 Após o agrupamento, ao realiarmos a execução do programa, temos o resultado:
 ![exemplo-media.png](imgs%2Fexemplo-media.png)
+
+## Abreviação de Operadores aritméticos
+Até o momento estudamos Operadores Aritméticos que são : adição (+), subtração (-), divisão (/), multiplicação (*), entre 
+outros. Aprendemos o operador de atribuição (=), onde usamos para atribuir valores as variáveis.
+E a abreviação dos operadores é a combinação dos Operadores Aritméticos com o operador de atribuição.
+Vamos tomar nosso exemplo anterior que usamos na adição, para deixar mais claro:
+```
+public class SemAbreviacaoAdicao {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        //Adição
+        anoAtual = anoAtual + 100;
+        System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+No exemplo anterior, queremos obter o resultado do "anoAtual" adicionando o valor "100", e atribuir o resultado ao "anoAtual". 
+Para isso repetimos a variável "anoAtual" na expressão para atribuir o resultado ao "anoAtual". Mas não precisamos codificar dessa maneira, 
+existe uma maneira mais simples para realizar essa operação. Detalhe importante, na linha da expressão de adição 
+(exemplo: ***int*** anoAtual = anoAtual + 100; Se fizermos isso, o programa não compila.) não declaramos o tipo, pois o 
+tipo já foi declarado na linha anterior. 
+Se executarmos o novo exemplo temos o seguinte resultado:
+![sem-abreviacao-adicao.png](imgs%2Fsem-abreviacao-adicao.png)
+
+Aplicando a abreviação teremos:
+```
+public class AbreviacaoAdicao {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        //Adição
+        
+        //Sem abreviação 
+        //anoAtual = anoAtual + 100;
+        
+        //Com abreviação 
+        anoAtual += 100;
+        System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+E ao execurtamos nosso programa novamente, obtemos o resultado:
+![abreviacao-adicao.png](imgs%2Fabreviacao-adicao.png)
+
+Para melhor entendimento do que realizamos, estamos utilizando o operador de atribuição para realizar 
+a operação de adição. Ou seja, a variável "anoAtual" vai receber ela mesmo somando-se o valor 100.
+As razões para uso, normalmente é para deixar o código mais elegante e também evitar repetição desnecessária de código.
+Podemos realizar também para os outros operadores aritméticos, por exemplo, subtração:
+```
+public class AbreviacaoSubtracao {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        //Adição
+        //Sem abreviação 
+        //anoAtual = anoAtual + 100;
+        
+        //Com abreviação 
+        //anoAtual += 100;
+        
+        //Subtração
+        //Sem abreviação 
+        //anoAtual = anoAtual - 100;
+       
+        //Com abreviação 
+        anoAtual -= 100;
+        
+        System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+Temos o seguinte resultado:
+![abreviacao-subtracao.png](imgs%2Fabreviacao-subtracao.png)
+
+Para multiplicação:
+```
+public class AbreviacaoMultiplicacao {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        //Adição
+        //Sem abreviação 
+        //anoAtual = anoAtual + 100;
+        
+        //Com abreviação 
+        //anoAtual += 100;
+        
+        //Subtração
+        //Sem abreviação 
+        //anoAtual = anoAtual - 100;
+       
+        //Com abreviação 
+        //anoAtual -= 100;
+        
+        //Multiplicação
+        //Sem abreviação 
+        //anoAtual = anoAtual * 100;
+       
+        //Com abreviação 
+        anoAtual *= 100;
+        
+        System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+Temos o seguinte resultado:
+![abreviacao-multiplicacao.png](imgs%2Fabreviacao-multiplicacao.png)
+
+Para divisão:
+```
+public class AbreviacaoDivisao {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        //Adição
+        //Sem abreviação 
+        //anoAtual = anoAtual + 100;
+        
+        //Com abreviação 
+        //anoAtual += 100;
+        
+        //Subtração
+        //Sem abreviação 
+        //anoAtual = anoAtual - 100;
+       
+        //Com abreviação 
+        //anoAtual -= 100;
+        
+        //Multiplicação
+        //Sem abreviação 
+        //anoAtual = anoAtual * 100;
+       
+        //Com abreviação 
+        //anoAtual *= 100;
+        
+        //Divisão
+        //Sem abreviação 
+        //anoAtual = anoAtual / 2;
+       
+        //Com abreviação 
+        anoAtual /= 2;
+        
+        System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+Temos o seguinte resultado:
+![abreviacao-divisao.png](imgs%2Fabreviacao-divisao.png)
+
+Para resto de divisão (mod):
+```
+public class AbreviacaoMod {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        //Adição
+        //Sem abreviação 
+        //anoAtual = anoAtual + 100;
+        
+        //Com abreviação 
+        //anoAtual += 100;
+        
+        //Subtração
+        //Sem abreviação 
+        //anoAtual = anoAtual - 100;
+       
+        //Com abreviação 
+        //anoAtual -= 100;
+        
+        //Multiplicação
+        //Sem abreviação 
+        //anoAtual = anoAtual * 100;
+       
+        //Com abreviação 
+        //anoAtual *= 100;
+        
+        //Mod - Resto divisão
+        //Sem abreviação 
+        //anoAtual = anoAtual % 2;
+       
+        //Com abreviação 
+        anoAtual %= 2;
+        
+        System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+Temos o seguinte resultado:
+![abreviacao-mod.png](imgs%2Fabreviacao-mod.png)
+
+
