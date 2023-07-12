@@ -1,4 +1,4 @@
-public class VariaveisLiteralImpressaoSubtracaoMultiplicacaoDivisao {
+public class VariaveisLiteralImpressaoSubtracaoMultiplicacaoDivisaoModulo {
     public static void main(String[] args) {
 
         int anoAtual = 2023;
@@ -19,5 +19,9 @@ public class VariaveisLiteralImpressaoSubtracaoMultiplicacaoDivisao {
         //Divisão
         int divisao = anoAtual / 2;
         System.out.println("Resultado divisao : " + divisao);
+
+        //Modulo
+        int modulo = 5 / 2;
+        System.out.println("Resultado modulo : " + modulo);
     }
 }

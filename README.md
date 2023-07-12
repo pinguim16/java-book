@@ -1127,3 +1127,165 @@ o nome correto, a má interpretação de seu código pode levar a erros na corre
 e não vai compilar. Mas podemos declarar das seguintes maneiras, apesar de não ser recomendado: ***ano1Atual***, 
 ***ano_Atual***, ***ano$Atual***. 
 - E como mencionamos anteriormente, não podemos utilizar as palavras reservadas.
+
+## Operadores aritméticos
+Os operadores aritméticos são os operadores que utilizamos para realizar calculos matemáticos e aqui vamos alguns para 
+que possa ir aprendendo sobre os operadores:
+- Temos o operador de adição (+), ao qual usamos anteriormente para realizar os cálculos de anos realizando a soma de 
+duas variaveis, dois números literais ou podemos usar até mesmo a mistura de ambos (variavel + numero literal + variavel).
+```
+public class AdicaoVariavelNumeroLiteral {
+     public static void main(String[] args) {
+        
+        int anoAtual = 2023;
+        int proximoAno = 2024;
+        
+        //Adição
+        int adicao = proximoAno + 100 + anoAtual;
+        System.out.println("Resultado adicao : " + adicao);
+    }
+}
+```
+Temos o seguinte resultado ao executarmos o programa:
+![variavel-numero-literal.png](imgs%2Fvariavel-numero-literal.png)
+ 
+- Temos o operador de subtração, onde podemos diferenças como fizemos anteriormente.
+```
+public class VariaveisLiteralImpressaoSubtracao {
+     public static void main(String[] args) {
+        
+        int anoAtual = 2023;
+        int proximoAno = 2024;
+        
+        //Adição
+        int adicao = proximoAno + 100 + anoAtual;
+        System.out.println("Resultado adicao : " + adicao);
+        
+        //Subtração
+        int subtracao = proximoAno - 100;
+        System.out.println("Resultado subtracao : " + subtracao);
+    }
+}
+```
+Temos o seguinte resultado ao executarmos o programa:
+![adicao-subtracao-numero-literal.png](imgs%2Fadicao-subtracao-numero-literal.png)
+
+- Temos o operador de multiplicação (*), ao qual usamos o asterisco para efetuar as operações e até o 
+momento não temos exemplos do mesmo.
+```
+public class VariaveisLiteralImpressaoSubtracaoMultiplicacao {
+     public static void main(String[] args) {
+        
+        int anoAtual = 2023;
+        int proximoAno = 2024;
+        
+        //Adição
+        int adicao = proximoAno + 100 + anoAtual;
+        System.out.println("Resultado adicao : " + adicao);
+        
+        //Subtração
+        int subtracao = proximoAno - 100;
+        System.out.println("Resultado subtracao : " + subtracao);
+        
+        //Multiplicação
+        int multiplicacao = anoAtual * 2;
+        System.out.println("Resultado multiplicacao : " + multiplicacao);
+    }
+}
+```
+Temos o seguinte resultado ao executarmos o programa:
+![adicao-subtracao-multiplicacao.png](imgs%2Fadicao-subtracao-multiplicacao.png)
+- Temos o operador de divisão (/), representado pela barra invertida.
+```
+public class VariaveisLiteralImpressaoSubtracaoMultiplicacao {
+     public static void main(String[] args) {
+        
+        int anoAtual = 2023;
+        int proximoAno = 2024;
+        
+        //Adição
+        int adicao = proximoAno + 100 + anoAtual;
+        System.out.println("Resultado adicao : " + adicao);
+        
+        //Subtração
+        int subtracao = proximoAno - 100;
+        System.out.println("Resultado subtracao : " + subtracao);
+        
+        //Divisão
+        int divisao = anoAtual / 2;
+        System.out.println("Resultado divisao : " + divisao);
+    }
+}
+```
+Temos o seguinte resultado ao executarmos o programa:
+![adicao-subtracao-multiplicacao-divisao.png](imgs%2Fadicao-subtracao-multiplicacao-divisao.png)
+Se observarmos a divisão tem algo estranho, o resultado correto seria 1.011,5, a gente vai estudar mais sobre os tipos 
+mas para entender o int só recebe números inteiros, sendo assim na divisão ele desconsidera as casas decimais por não 
+possuir precisão das casas decimais.
+
+- Continuando os operadores temos o modulo (%) ou como aprendendo no ensino fundamental o "mod", operador para o resto 
+de uma divisão.
+```
+public class VariaveisLiteralImpressaoSubtracaoMultiplicacao {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        int proximoAno = 2024;
+        
+        //Adição
+        int adicao = proximoAno + 100 + anoAtual;
+        System.out.println("Resultado adicao : " + adicao);
+        
+        //Subtração
+        int subtracao = proximoAno - 100;
+        System.out.println("Resultado subtracao : " + subtracao);
+        
+        //Divisão
+        int divisao = anoAtual / 2;
+        System.out.println("Resultado divisao : " + divisao);
+        
+        //Modulo
+        int modulo = 5 / 2;
+        System.out.println("Resultado modulo : " + modulo);
+    }
+}
+```
+Temos o seguinte resultado ao executarmos o programa:
+![adicao-subtracao-multiplicacao-divisao-moldulo.png](imgs%2Fadicao-subtracao-multiplicacao-divisao-moldulo.png)
+
+Ponto importante que temos que levar em consideração, no exemplo abaixo, queremos calcular a média dos exemplos:
+```
+public class MediaExemplos {
+
+  public static void main(String[] args) {
+
+        int exemplo1 = 30;
+        int exemplo2 = 40;
+        int exemplo3 = 50;
+        
+        int resultadoMedia = exemplo1 + exemplo2 + exemplo3 / 3;
+        System.out.println("Resultado media : " + resultadoMedia);
+    }
+}
+```
+Ao exercutarmos esse programa teremos o seguinte resultado:
+![media-exemplos.png](imgs%2Fmedia-exemplos.png)
+Se observamos a media nos retornou um valor incorreto, isso acontece pois o Java da prioridade para operadores de 
+multiplicação e divisão, então para sobrepor essa prioridade precisamos agrupar a soma com parenteses conforme abaixo:
+```
+public class MediaExemplos {
+
+  public static void main(String[] args) {
+
+        int exemplo1 = 30;
+        int exemplo2 = 40;
+        int exemplo3 = 50;
+        
+        int resultadoMedia = (exemplo1 + exemplo2 + exemplo3) / 3;
+        System.out.println("Resultado media : " + resultadoMedia);
+    }
+}
+```
+Após o agrupamento, ao realiarmos a execução do programa, temos o resultado:
+![exemplo-media.png](imgs%2Fexemplo-media.png)

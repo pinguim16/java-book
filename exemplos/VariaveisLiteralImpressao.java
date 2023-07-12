@@ -1,4 +1,4 @@
-public class VariaveisLiteral {
+public class AdicaoVariavelNumeroLiteral {
     public static void main(String[] args) {
         int anoAtual = 2023;
 

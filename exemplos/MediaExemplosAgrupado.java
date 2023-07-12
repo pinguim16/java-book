@@ -6,7 +6,7 @@ public class MediaExemplos {
         int exemplo2 = 40;
         int exemplo3 = 50;
 
-        int resultadoMedia = exemplo1 + exemplo2 + exemplo3 /3;
+        int resultadoMedia = (exemplo1 + exemplo2 + exemplo3) / 3;
         System.out.println("Resultado media : " + resultadoMedia);
     }
 }
