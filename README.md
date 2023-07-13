@@ -1492,4 +1492,171 @@ public class AbreviacaoMod {
 Temos o seguinte resultado:
 ![abreviacao-mod.png](imgs%2Fabreviacao-mod.png)
 
+## Operadores para incremento e decremento
+Nesse tópico vamos falar dos operadores de incremento e decremento, que são operadores responsáveis por adicionar ou 
+diminuir a quantidade 1 da variável que desejarmos. Aproveitando o exemplo, vamos pontuar as formas que já conhecemos:
+- Utilizando a própria variável e adicionando + 1:
+```
+public class OperadorIncremento {
 
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        anoAtual = anoAtual + 1;
+        
+       System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+- Utilizando o operador abreviado:
+```
+public class OperadorIncremento {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        anoAtual += 1;
+        
+       System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+- Utilizando o operador de incremento:
+```
+public class OperadorIncremento {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        anoAtual ++;
+        
+       System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+E temos o seguinte resultado, lembrando que o incremento será adicionará +1 a variável que deseja:
+![operador-incremento.png](imgs%2Foperador-incremento.png)
+
+Caso deseje incrementar mais que utilizando o incremento, só seria possível se duplicasse a linha de código. como 
+demonstrado no exemplo abaixo:
+```
+public class OperadorIncrementoDuplicado {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        anoAtual ++;
+
+        
+       System.out.println("Resultado anoAtual : " + anoAtual);
+    }
+}
+```
+E o resultado seria:
+![operador-incremento-duplicado.png](imgs%2Foperador-incremento-duplicado.png)
+
+Quando usamos o operador de incremento, temos duas possibilidades de utiliza-lo, o pos-fixando e o pre-fixado.
+Nos nossos exemplos anteriores utilizamos o pos-fixado, mas ao utilizar-lo temos que atentar a detalhe muito importante, 
+não podemos utilizar atribuindo a uma variável ao mesmo tempo, como exemplo abaixo:
+```
+public class OperadorIncrementoAtribuicao {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        int novoAno = anoAtual++;
+
+        System.out.println("Resultado anoAtual : " + anoAtual);
+        System.out.println("Resultado novoAno : " + anoAtual);
+       
+    }
+}
+```
+Quando executamos esse programa, temos o seguinte resultado:
+![operador-incremento-atribuicao.png](imgs%2Foperador-incremento-atribuicao.png)
+
+Podemos notar que incremento, foi realizado a variável "anoAtual", mas o valor não foi atribuído a variável "novoAno" 
+foi valor antes da atribuição. Ou seja, primeiro o programa está atribuindo a variável "anoAtual" a "novoAno" para depois 
+incrementar o valor. Uma forma de corrigir esse problema seria realizar o incremento antes :
+```
+public class OperadorIncrementoAtribuicaoAnt {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        anoAtual++;
+        int novoAno = anoAtual;
+
+        System.out.println("Resultado anoAtual : " + anoAtual);
+        System.out.println("Resultado novoAno : " + anoAtual);
+       
+    }
+}
+```
+Quando executamos o programa temos o resultado correto:
+![operador-incremento-atribuicao-ant.png](imgs%2Foperador-incremento-atribuicao-ant.png)
+
+Mas temos uma maneira mais fácil de realizar essa operação, basta utilizarmos o pré-fixado:
+```
+public class OperadorIncrementoAtribuicaoPreFix {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        int novoAno = ++anoAtual;
+
+        System.out.println("Resultado anoAtual : " + anoAtual);
+        System.out.println("Resultado novoAno : " + anoAtual);
+       
+    }
+}
+```
+Assim teremos o seguinte, resultado:
+![operador-incremento-atribuicao-pre-fix.png](imgs%2Foperador-incremento-atribuicao-pre-fix.png)
+
+Sendo assim, abaixo deixamos o programa com o pos-fixado e pre-fixado para fins de comparação:
+```
+public class OperadorIncrementoAtribuicaoPreFix {
+
+  public static void main(String[] args) {
+
+        int anoAtual = 2023;
+        
+        //pre-fixado
+        int novoAno = ++anoAtual;
+        
+        //pos-fixado
+        int novoAno = anoAtual++;
+
+        System.out.println("Resultado anoAtual : " + anoAtual);
+        System.out.println("Resultado novoAno : " + anoAtual);
+       
+    }
+}
+```
+
+Do mesmo jeito que temos um operador para incremento, temos um operador para decremento, seguindo a mesma lógica de 
+pos-fixado e pre-fixado:
+```
+public class OperadorDecremento {
+
+  public static void main(String[] args) {
+
+        int anoAtualPre = 2023;
+        //pre-fixado
+        int decrementoPreFixado = --anoAtual;
+        System.out.println("AnoAtualPre : " + anoAtualPre);
+        System.out.println("Decremento Pre Fixado: " + decrementoPreFixado);
+                
+        //pos-fixado
+        int anoAtualPos = 2023;
+        int decrementoPosFixado = anoAtual--;
+        System.out.println("AnoAtualPos : " + anoAtualPos);
+        System.out.println("Decremento Pos Fixado: " + decrementoPosFixado);
+       
+    }
+}
+```
+Ao executarmos o sistema, temos as seguintes resultados:
+![operador-decremento.png](imgs%2Foperador-decremento.png)
