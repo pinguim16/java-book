@@ -1,7 +1,10 @@
-public class Variaveis2024 {
+public class ExemploBooleano {
+
     public static void main(String[] args) {
-        int anoAtual = 2023;
-        anoAtual = 2024;
-        System.out.println(anoAtual);
+        boolean loginComSucesso = true;
+        boolean loginBloqueado = false;
+
+        System.out.println(loginComSucesso);
+        System.out.println(loginBloqueado);
     }
 }

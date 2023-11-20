@@ -1660,3 +1660,61 @@ public class OperadorDecremento {
 ```
 Ao executarmos o sistema, temos as seguintes resultados:
 ![operador-decremento.png](imgs%2Foperador-decremento.png)
+
+## Tipos primitivos boolean, char, byte e short
+Nos capitulos anteriores, aprendemos como armazenar valores inteiros (int) nas variaveis que criamos, mas a 
+linguagem possui mais tipos básicos, conhecidos como tipos primitivos, como podemos observar na tabela abaixo:
+
+| Tipo    | Tamanho(bits) | Menor Valor | Maior Valor |
+|---------|---------------|-------------|-------------|
+| boolean | 1             | false       | true        |
+| char    | 16            | 0           | 2^16 - 1    |
+| byte    | 8             | -2^7        | 2^7 - 1     |
+| short   | 16            | -2^15       | 2^15 - 1    |
+| int     | 32            | -2^31       | 2^31 - 1    |
+| long    | 64            | -2^63       | 2^63 - 1    |
+| float   | 32            | -           | -           |
+| double  | 64            | -           | -           |
+Observação: o bit é a menor unidade de armazenamento na computação.
+
+Temos que nos atentar que cada tipo primitivo possui uma capacidade de armazenamento, então dependendo do tipo da 
+informação que deseja armazenar se escolhe um tipo correspondente. A partir de agora vamos passar por cada tipo para 
+possa conhecer um pouco mais sobre eles:
+- boolean : true (verdadeiro - em português) ou false (falso - em português), seu armazenamento é de apenas um 1 bit, o 
+mesmo é muito utilizado para validação de alguma expressão dentro da linguagem. 
+O boolean só aceita valores literais, ou seja fixado no código, true ou false, qualquer outro valor que tentar atribuir 
+a variavel boolean o programa irá retornar erro. Lembrando que temos o boolean com B, ou seja, Boolean, não falaremos 
+dele agora por se tratar de uma classe e iremos ver esse tipo na orientação a objeto, por enquanto vamos focar apenas nos
+tipos primitivos.
+Exemplo:
+```
+public class ExemploBooleano {
+
+    public static void main(String[] args) {
+        boolean loginComSucesso = true;
+        boolean loginBloqueado = false;
+
+        System.out.println(loginComSucesso);
+        System.out.println(loginBloqueado);
+    }
+}
+```
+Se executar o exemplo acima temos o seguinte resultado:
+![exemplo-booleano.png](imgs%2Fexemplo-booleano.png)
+
+No java diferente de outras linguagens não podemos atribuir 0 para false e 1 para true, caso a tentativa seja realizada,
+como no exemplo abaixo:
+```
+public class ExemploBooleano {
+
+    public static void main(String[] args) {
+        boolean loginComSucesso = 1;
+        boolean loginBloqueado = 0;
+
+        System.out.println(loginComSucesso);
+        System.out.println(loginBloqueado);
+    }
+}
+```
+Teremos o seguinte erro:
+![exemplo-booleano-erro.png](imgs%2Fexemplo-booleano-erro.png)
